@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,131 +9,130 @@
       --glass-bg: rgba(20, 20, 30, 0.4);
       --glass-border: rgba(255, 255, 255, 0.08);
       --text-color: #f5f5f7;
-    }
+    }body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #000;
+  color: var(--text-color);
+  overflow-x: hidden;
+}
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #000;
-      color: var(--text-color);
-      overflow-x: hidden;
-    }
+nav.glass-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 1000;
+}
 
-    nav.glass-nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--glass-border);
-      z-index: 1000;
-    }
+nav.glass-nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s;
+}
 
-    nav.glass-nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      transition: color 0.3s;
-    }
+nav.glass-nav a:hover {
+  color: #5ee7df;
+}
 
-    nav.glass-nav a:hover {
-      color: #5ee7df;
-    }
+.fullscreen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
 
-    .fullscreen {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
+.glass-panel {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: all 0.5s ease;
+}
 
-    .glass-panel {
-      position: relative;
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px) saturate(160%);
-      border: 1px solid var(--glass-border);
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-      transition: all 0.5s ease;
-    }
+.glass-panel::after {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(45deg, #4facfe, #00f2fe, #5ee7df);
+  z-index: -1;
+  border-radius: 18px;
+  opacity: 0.4;
+  animation: gradient-pulse 6s infinite;
+}
 
-    .glass-panel::after {
-      content: "";
-      position: absolute;
-      top: -2px; left: -2px; right: -2px; bottom: -2px;
-      background: linear-gradient(45deg, #4facfe, #00f2fe, #5ee7df);
-      z-index: -1;
-      border-radius: 18px;
-      opacity: 0.4;
-      animation: gradient-pulse 6s infinite;
-    }
+@keyframes gradient-pulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.6; }
+}
 
-    @keyframes gradient-pulse {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 0.6; }
-    }
+.glass-panel:hover {
+  box-shadow: 0 0 30px rgba(100, 150, 255, 0.3);
+  transform: translateY(-5px);
+}
 
-    .glass-panel:hover {
-      box-shadow: 0 0 30px rgba(100, 150, 255, 0.3);
-      transform: translateY(-5px);
-    }
+h1 {
+  font-size: 4rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
 
-    h1 {
-      font-size: 4rem;
-      margin: 0;
-      letter-spacing: 0.05em;
-    }
+p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
 
-    p {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-      line-height: 1.6;
-    }
+#features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
 
-    #features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 4rem 2rem;
-    }
+.feature-card {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-    .feature-card {
-      width: 300px;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+#gallery {
+  position: relative;
+  height: 100vh;
+  background: url('https://via.placeholder.com/1920x1080') center/cover fixed no-repeat;
+}
 
-    #gallery {
-      position: relative;
-      height: 100vh;
-      background: url('https://via.placeholder.com/1920x1080') center/cover fixed no-repeat;
-    }
+.glass-caption {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  max-width: 300px;
+}
 
-    .glass-caption {
-      position: absolute;
-      bottom: 10%;
-      left: 10%;
-      max-width: 300px;
-    }
+footer.glass-footer {
+  padding: 2rem;
+  text-align: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--glass-border);
+}
 
-    footer.glass-footer {
-      padding: 2rem;
-      text-align: center;
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      border-top: 1px solid var(--glass-border);
-    }
   </style>
 </head>
 <body>
@@ -143,16 +141,12 @@
     <a href="#features">Features</a>
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="hero" class="fullscreen">
+  </nav>  <section id="hero" class="fullscreen">
     <div class="glass-panel">
       <h1>Liquid Glass Pro</h1>
       <p>Minimal design. Maximum impact.</p>
     </div>
-  </section>
-
-  <section id="features">
+  </section>  <section id="features">
     <div class="feature-card glass-panel">
       <h2>Feature One</h2>
     </div>
@@ -162,16 +156,12 @@
     <div class="feature-card glass-panel">
       <h2>Feature Three</h2>
     </div>
-  </section>
-
-  <section id="gallery">
+  </section>  <section id="gallery">
     <div class="glass-caption glass-panel">
       <h2>Stunning Views</h2>
       <p>Experience visuals like never before.</p>
     </div>
-  </section>
-
-  <footer class="glass-footer">
+  </section>  <footer class="glass-footer">
     &copy; 2025 Liquid Glass Co. All rights reserved.
   </footer>
 </body>
